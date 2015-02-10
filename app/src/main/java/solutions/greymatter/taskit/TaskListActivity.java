@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 public class TaskListActivity extends ActionBarActivity {
@@ -12,6 +14,17 @@ public class TaskListActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_list);
+
+        Task[] items = new Task[3];
+        items[0] = new Task();
+        items[0].setName("Task 1");
+        items[1] = new Task();
+        items[1].setName("Task 2");
+        items[2] = new Task();
+        items[2].setName("Task 3");
+
+        ListView listView = (ListView)findViewById(R.id.task_list);
+        listView.setAdapter(new ArrayAdapter<Task>(this, android.R.layout.simple_list_item_1, items));
     }
 
 
