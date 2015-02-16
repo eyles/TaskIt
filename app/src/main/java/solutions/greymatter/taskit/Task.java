@@ -1,11 +1,12 @@
 package solutions.greymatter.taskit;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Connor on 10/02/2015.
  */
-public class Task {
+public class Task implements Serializable{
     private String mName;
     private Date mDueDate;
     private boolean mDone;
